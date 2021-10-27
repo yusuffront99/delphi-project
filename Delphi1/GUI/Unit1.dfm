@@ -55,6 +55,7 @@ object Form1: TForm1
     Height = 41
     Caption = 'Simpan'
     TabOrder = 2
+    OnClick = btnSimpanClick
   end
   object tglDaftar: TDateTimePicker
     Left = 192
@@ -64,5 +65,35 @@ object Form1: TForm1
     Date = 44496.000000000000000000
     Time = 0.796300219910335700
     TabOrder = 3
+  end
+  object ZConnection1: TZConnection
+    ControlsCodePage = cCP_UTF16
+    Catalog = ''
+    Properties.Strings = (
+      'controls_cp=CP_UTF16')
+    Connected = True
+    HostName = 'localhost'
+    Port = 0
+    Database = 'test1'
+    User = 'root'
+    Password = ''
+    Protocol = 'mysql'
+    LibraryLocation = 'D:\SEMESTER 5\Visual_3\delphi-project\Delphi1\GUI\libmysql.dll'
+    Left = 64
+    Top = 280
+  end
+  object DataSource1: TDataSource
+    DataSet = siswa
+    Left = 128
+    Top = 280
+  end
+  object siswa: TZQuery
+    Connection = ZConnection1
+    Active = True
+    SQL.Strings = (
+      'SELECT * FROM siswa ORDER BY nama ASC')
+    Params = <>
+    Left = 200
+    Top = 280
   end
 end
